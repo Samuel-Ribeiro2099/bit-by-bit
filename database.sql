@@ -121,3 +121,80 @@ CREATE TABLE APROVACAO (
 INSERT INTO ADMIN (EMAIL, SENHA) VALUES
 ('admin1@bitbybit.local', 'SEED_PASSWORD_1'),
 ('admin2@bitbybit.local', 'SEED_PASSWORD_2');
+
+
+-- =========================================================
+-- JOGOS INICIAIS
+-- =========================================================
+
+INSERT INTO JOGO (
+    TITULO,
+    LINK_EXECUCAO,
+    LINK_DOWNLOAD,
+    IMAGEM_URL,
+    FAI_ETA,
+    DESCRICAO,
+    DESENVOLVEDOR,
+    ID_CONTA,
+    ID_CAT
+) VALUES
+
+(
+    '2048',
+    'https://play2048.co/',
+    NULL,
+    NULL,
+    'LIVRE',
+    'Jogo de lógica matemática no qual o jogador combina números iguais para formar valores maiores. Estimula raciocínio lógico, planejamento e cálculo.',
+    'Outros',
+    1,
+    (SELECT ID_CAT FROM CATEGORIA WHERE NOME_CAT = 'Matemática')
+),
+
+(
+    'Scratch',
+    'https://scratch.mit.edu/',
+    NULL,
+    NULL,
+    'LIVRE',
+    'Plataforma interativa que permite criar animações, histórias e jogos utilizando programação visual. Pode ser utilizada para introduzir conceitos de lógica e programação.',
+    'Outros',
+    1,
+    (SELECT ID_CAT FROM CATEGORIA WHERE NOME_CAT = 'Tecnologia')
+),
+
+(
+    'Wordwall',
+    'https://wordwall.net/',
+    NULL,
+    NULL,
+    'LIVRE',
+    'Plataforma que oferece atividades educativas interativas, incluindo jogos de associação, questionários, palavras e desafios.',
+    'Outros',
+    1,
+    (SELECT ID_CAT FROM CATEGORIA WHERE NOME_CAT = 'Português')
+),
+
+(
+    'GeoGuessr',
+    'https://www.geoguessr.com/',
+    NULL,
+    NULL,
+    'LIVRE',
+    'Jogo de exploração geográfica no qual os jogadores tentam identificar locais do mundo a partir de imagens de paisagens e ruas.',
+    'Outros',
+    1,
+    (SELECT ID_CAT FROM CATEGORIA WHERE NOME_CAT = 'Geografia')
+),
+
+(
+    'Chess.com',
+    'https://www.chess.com/',
+    NULL,
+    NULL,
+    'LIVRE',
+    'Plataforma de xadrez que permite jogar partidas, resolver desafios e aprender estratégias. Pode auxiliar no desenvolvimento do raciocínio lógico e planejamento.',
+    'Outros',
+    1,
+    (SELECT ID_CAT FROM CATEGORIA WHERE NOME_CAT = 'Matemática')
+);

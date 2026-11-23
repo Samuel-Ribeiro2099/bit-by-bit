@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit-By-Bit | Jogos Educativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-top">
+
+        <a href="index.html" class="logo">
+            BIT-BY-BIT
+        </a>
+
+        <div class="search-container">
+            <input
+                type="search"
+                id="busca"
+                placeholder="Pesquise aqui..."
+                aria-label="Pesquisar jogos"
+            >
+
+            <button
+                id="btnBuscar"
+                class="btn btn-purple"
+                aria-label="Pesquisar"
+            >
+                🔍
+            </button>
+        </div>
+
+        <button
+            id="abrirLogin"
+            class="btn btn-light"
+        >
+            Logar como admin
+        </button>
+
+    </div>
+
+    <nav class="nav">
+        <a href="#objetivo">Objetivo</a>
+        <a href="#sobre">Sobre</a>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">
+                APRENDA JOGANDO
+            </span>
+
+            <h1>
+                BIT-BY-BIT
+            </h1>
+
+            <p>
+                Descubra jogos educativos e aprenda
+                de maneira interativa.
+            </p>
+
+            <a href="#catalogo" class="btn btn-purple">
+                Explorar catálogo
+            </a>
+        </div>
+    </section>
+
+    <section
+        id="catalogo"
+        class="catalog-section"
+    >
+
+        <h2>Catálogo de jogos</h2>
+
+        <p class="section-description">
+            Explore jogos relacionados a diferentes áreas
+            do conhecimento.
+        </p>
+
+        <div class="filters">
+
+            <div class="filter-group">
+                <label for="categoriaFiltro">
+                    Categoria
+                </label>
+
+                <select id="categoriaFiltro">
+                    <option value="">Todas</option>
+                    <option>Matemática</option>
+                    <option>Português</option>
+                    <option>Ciências</option>
+                    <option>História</option>
+                    <option>Geografia</option>
+                    <option>Inglês</option>
+                    <option>Artes</option>
+                    <option>Tecnologia</option>
+                    <option>Educação Física</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="idadeFiltro">
+                    Faixa etária
+                </label>
+
+                <select id="idadeFiltro">
+                    <option value="">Todas</option>
+                    <option value="LIVRE">Livre</option>
+                    <option value="6+">6+</option>
+                    <option value="10+">10+</option>
+                    <option value="12+">12+</option>
+                    <option value="14+">14+</option>
+                    <option value="16+">16+</option>
+                    <option value="18+">18+</option>
+                </select>
+            </div>
+
+            <button
+                id="limparFiltros"
+                class="btn btn-dark"
+            >
+                Limpar filtros
+            </button>
+
+        </div>
+
+        <div class="suggestions">
+
+            <span>Pesquisas rápidas:</span>
+
+            <button
+                class="suggestion-btn"
+                data-search="matemática"
+            >
+                Matemática
+            </button>
+
+            <button
+                class="suggestion-btn"
+                data-search="programação"
+            >
+                Programação
+            </button>
+
+            <button
+                class="suggestion-btn"
+                data-search="história"
+            >
+                História
+            </button>
+
+            <button
+                class="suggestion-btn"
+                data-search="geografia"
+            >
+                Geografia
+            </button>
+
+        </div>
+
+        <div
+            id="listaJogos"
+            class="games-grid"
+        >
+            <p>Carregando jogos...</p>
+        </div>
+
+    </section>
+
+    <section
+        id="objetivo"
+        class="info-section"
+    >
+        <h2>Objetivo</h2>
+
+        <p>
+            O Bit-By-Bit tem como objetivo reunir jogos
+            educativos em um catálogo organizado, facilitando
+            o acesso a recursos que auxiliem o aprendizado
+            de diferentes áreas do conhecimento.
+        </p>
+    </section>
+
+    <section
+        id="sobre"
+        class="info-section"
+    >
+        <h2>Sobre o projeto</h2>
+
+        <p>
+            O Bit-By-Bit é uma plataforma de catálogo de jogos
+            educativos. A proposta é reunir recursos digitais
+            que possam ser utilizados como apoio ao aprendizado,
+            tornando a busca por jogos mais simples e acessível.
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>
+        Bit-By-Bit — Aprendizado em cada bit.
+    </p>
+</footer>
+
+<!-- MODAL LOGIN -->
+
+<div
+    id="modalLogin"
+    class="modal"
+    aria-hidden="true"
+>
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            data-close="modalLogin"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+        <h2>Login administrativo</h2>
+
+        <form id="formLogin">
+
+            <label for="emailLogin">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="emailLogin"
+                required
+            >
+
+            <label for="senhaLogin">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senhaLogin"
+                required
+            >
+
+            <label class="checkbox-label">
+                <input
+                    type="checkbox"
+                    id="lembrar"
+                >
+                Lembrar-me
+            </label>
+
+            <button
+                type="submit"
+                class="btn btn-purple full"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+        <button
+            id="abrirRecuperacao"
+            class="text-button"
+        >
+            Esqueci a senha
+        </button>
+
+        <button
+            id="abrirCadastro"
+            class="text-button"
+        >
+            Criar conta administrativa
+        </button>
+
+        <p
+            id="mensagemLogin"
+            class="message"
+        ></p>
+
+    </div>
+</div>
+
+<!-- MODAL CADASTRO -->
+
+<div
+    id="modalCadastro"
+    class="modal"
+    aria-hidden="true"
+>
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            data-close="modalCadastro"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+        <h2>Cadastro administrativo</h2>
+
+        <form id="formCadastro">
+
+            <label for="emailCadastro">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="emailCadastro"
+                required
+            >
+
+            <label for="senhaCadastro">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senhaCadastro"
+                minlength="8"
+                required
+            >
+
+            <label for="chaveCadastro">
+                Chave de cadastro
+            </label>
+
+            <input
+                type="password"
+                id="chaveCadastro"
+                required
+            >
+
+            <button
+                type="submit"
+                class="btn btn-purple full"
+            >
+                Criar conta
+            </button>
+
+        </form>
+
+        <p
+            id="mensagemCadastro"
+            class="message"
+        ></p>
+
+    </div>
+</div>
+
+<!-- MODAL RECUPERAÇÃO -->
+
+<div
+    id="modalRecuperacao"
+    class="modal"
+    aria-hidden="true"
+>
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            data-close="modalRecuperacao"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+        <h2>Recuperação de senha</h2>
+
+        <p>
+            Informe o e-mail da conta administrativa.
+        </p>
+
+        <form id="formRecuperacao">
+
+            <label for="emailRecuperacao">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="emailRecuperacao"
+                required
+            >
+
+            <button
+                type="submit"
+                class="btn btn-purple full"
+            >
+                Solicitar
+            </button>
+
+        </form>
+
+        <p
+            id="mensagemRecuperacao"
+            class="message"
+        ></p>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

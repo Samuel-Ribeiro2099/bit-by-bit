@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit-By-Bit | Administração</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-top">
+
+        <a href="index.html" class="logo">
+            BIT-BY-BIT
+        </a>
+
+        <div class="admin-info">
+            <span id="adminEmail">
+                Administrador
+            </span>
+
+            <button
+                id="logout"
+                class="btn btn-light"
+            >
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+    <nav class="nav">
+        <a href="index.html">Catálogo</a>
+        <a href="#cadastro">Cadastrar jogo</a>
+        <a href="#sugestoes">Sugestões</a>
+    </nav>
+</header>
+
+<main class="admin-main">
+
+    <section
+        id="cadastro"
+        class="admin-section"
+    >
+
+        <h1>Gerenciamento de jogos</h1>
+
+        <p>
+            Cadastre novos jogos ou proponha alterações
+            em jogos existentes.
+        </p>
+
+        <form
+            id="formJogo"
+            enctype="multipart/form-data"
+        >
+
+            <input
+                type="hidden"
+                id="idJogo"
+            >
+
+            <label for="titulo">
+                Título
+            </label>
+
+            <input
+                type="text"
+                id="titulo"
+                maxlength="100"
+                required
+            >
+
+            <label for="imagem">
+                Imagem de capa
+            </label>
+
+            <input
+                type="file"
+                id="imagem"
+                accept="image/png,image/jpeg,image/webp"
+            >
+
+            <label for="categoria">
+                Categoria
+            </label>
+
+            <select id="categoria" required>
+                <option value="">Selecione</option>
+                <option>Matemática</option>
+                <option>Português</option>
+                <option>Ciências</option>
+                <option>História</option>
+                <option>Geografia</option>
+                <option>Inglês</option>
+                <option>Artes</option>
+                <option>Tecnologia</option>
+                <option>Educação Física</option>
+            </select>
+
+            <label for="desenvolvedor">
+                Desenvolvedor
+            </label>
+
+            <select id="desenvolvedor" required>
+                <option value="">Selecione</option>
+                <option>Mojang Studios</option>
+                <option>Nintendo</option>
+                <option>Ubisoft</option>
+                <option>EA</option>
+                <option>Microsoft Studios</option>
+                <option>Rockstar Games</option>
+                <option>SEGA</option>
+                <option>Bandai Namco</option>
+                <option>Konami</option>
+                <option>Outros</option>
+            </select>
+
+            <label for="faixaEtaria">
+                Faixa etária
+            </label>
+
+            <select id="faixaEtaria">
+                <option value="">Não informada (Livre)</option>
+                <option value="LIVRE">Livre</option>
+                <option value="6+">6+</option>
+                <option value="10+">10+</option>
+                <option value="12+">12+</option>
+                <option value="14+">14+</option>
+                <option value="16+">16+</option>
+                <option value="18+">18+</option>
+            </select>
+
+            <label for="linkExecucao">
+                Link de execução / informações
+            </label>
+
+            <input
+                type="url"
+                id="linkExecucao"
+                placeholder="https://..."
+            >
+
+            <label for="linkDownload">
+                Link de download
+            </label>
+
+            <input
+                type="url"
+                id="linkDownload"
+                placeholder="https://..."
+            >
+
+            <label for="descricao">
+                Descrição
+            </label>
+
+            <textarea
+                id="descricao"
+                rows="5"
+            ></textarea>
+
+            <button
+                type="submit"
+                class="btn btn-purple"
+            >
+                Salvar jogo
+            </button>
+
+            <button
+                type="button"
+                id="cancelarEdicao"
+                class="btn btn-dark"
+            >
+                Limpar formulário
+            </button>
+
+        </form>
+
+        <p
+            id="mensagemAdmin"
+            class="message"
+        ></p>
+
+    </section>
+
+    <section
+        class="admin-section"
+    >
+
+        <h2>Jogos cadastrados</h2>
+
+        <div
+            id="listaAdminJogos"
+            class="admin-list"
+        >
+            Carregando...
+        </div>
+
+    </section>
+
+    <section
+        id="sugestoes"
+        class="admin-section"
+    >
+
+        <h2>Sugestões de alteração</h2>
+
+        <p>
+            Alterações pendentes de aprovação por
+            outro administrador.
+        </p>
+
+        <div
+            id="listaSugestoes"
+            class="admin-list"
+        >
+            Carregando...
+        </div>
+
+        <p
+            id="mensagemSugestoes"
+            class="message"
+        ></p>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>Bit-By-Bit — Painel administrativo</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
